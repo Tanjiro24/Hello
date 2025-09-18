@@ -11,9 +11,10 @@ import P3 from "../assets/Product images/p3.jpg";
 import P5 from "../assets/Product images/p5.jpg";
 import P6 from "../assets/Product images/p6.jpg";
 import bgvideo from "../assets/Product Video/V1.mp4";
+import { Helmet } from "react-helmet";
 
 const Landing: React.FC = () => {
-  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<(typeof products)[0] | null>(null);
 
   const products = [
     {
@@ -208,6 +209,14 @@ const Landing: React.FC = () => {
   );
 
   return (
+    <>
+    <Helmet>
+      <title>Elixir Pharma - Enriching Health. Empowering Lives</title>
+      <meta name="description" content="Innovative skincare and wellness solutions, backed by science." />
+      <meta name="keywords" content="Pharmaceuticals, Skincare, Wellness, Health, Derma, Respi, Critical Care, Onco, Probiotics, Multivitamins" />
+      <meta name="author" content="Elixir Pharma" />
+      <link rel="canonical" href="https://www.elixirpharma.ph/" />
+    </Helmet>
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
@@ -647,7 +656,7 @@ const Landing: React.FC = () => {
         </div>
       </section>
     </div>
+</>
   );
 };
-
 export default Landing;
